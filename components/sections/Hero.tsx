@@ -5,6 +5,8 @@ import { ArrowRight, Download, ChevronDown, Shield, Cloud, Database, Code2 } fro
 import { AnimatedGridBackground } from "@/components/shared/AnimatedBackground";
 import { TerminalComponent } from "@/components/shared/Terminal";
 
+const AVATAR_URL = "https://raw.githubusercontent.com/HeyitsOn/JuniorNoMore/refs/heads/main/Onika%20Email.jpeg";
+
 const roles = [
   { label: "IT Support Professional", icon: Shield, color: "text-gold" },
   { label: "Junior DevOps Engineer", icon: Cloud, color: "text-electric" },
@@ -144,17 +146,78 @@ export function Hero() {
             </motion.div>
           </div>
 
-          {/* Right — Terminal */}
+          {/* Right — Photo + Terminal */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="hidden lg:block"
+            className="hidden lg:flex flex-col gap-4"
           >
+            {/* Profile photo */}
+            <div className="relative flex justify-center">
+              {/* Outer glow ring */}
+              <div className="absolute inset-0 rounded-full bg-gold/10 blur-2xl scale-75" />
+
+              {/* Decorative ring */}
+              <div className="relative w-64 h-64">
+                {/* Spinning dashed border */}
+                <motion.div
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                  className="absolute -inset-3 rounded-full border border-dashed border-gold/20"
+                />
+                <motion.div
+                  animate={{ rotate: -360 }}
+                  transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+                  className="absolute -inset-6 rounded-full border border-dashed border-electric/10"
+                />
+
+                {/* Photo frame */}
+                <div className="relative w-64 h-64 rounded-full overflow-hidden border-2 border-gold/30 shadow-[0_0_40px_rgba(212,175,55,0.2),0_0_80px_rgba(212,175,55,0.08)]">
+                  <img
+                    src={AVATAR_URL}
+                    alt="Onika Sileku"
+                    className="w-full h-full object-cover object-top"
+                  />
+                  {/* Subtle overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent" />
+                </div>
+
+                {/* Floating status badge */}
+                <motion.div
+                  animate={{ y: [0, -4, 0] }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute -bottom-2 left-1/2 -translate-x-1/2 whitespace-nowrap glass border border-emerald/20 rounded-full px-3 py-1.5 flex items-center gap-1.5 text-xs font-medium text-emerald shadow-lg"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald animate-pulse" />
+                  Open to opportunities
+                </motion.div>
+
+                {/* Floating tech chip — top right */}
+                <motion.div
+                  animate={{ y: [0, -6, 0] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                  className="absolute -top-1 -right-4 glass border border-gold/20 rounded-lg px-2.5 py-1.5 text-xs font-mono text-gold shadow-lg"
+                >
+                  Azure ☁
+                </motion.div>
+
+                {/* Floating tech chip — left */}
+                <motion.div
+                  animate={{ y: [0, -5, 0] }}
+                  transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                  className="absolute top-1/3 -left-8 glass border border-electric/20 rounded-lg px-2.5 py-1.5 text-xs font-mono text-electric-light shadow-lg"
+                >
+                  SQL ⚡
+                </motion.div>
+              </div>
+            </div>
+
+            {/* Terminal */}
             <TerminalComponent />
 
             {/* Stats row */}
-            <div className="grid grid-cols-3 gap-3 mt-4">
+            <div className="grid grid-cols-3 gap-3">
               {[
                 { value: "1+", label: "Years Experience" },
                 { value: "5+", label: "Live Projects" },
