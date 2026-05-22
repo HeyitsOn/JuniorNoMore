@@ -15,7 +15,7 @@ const traits = [
   {
     icon: Database,
     title: "Database Expertise",
-    description: "Proven hands-on skills in Azure, MySQL, and Access databases — from query optimisation to VBA automation and performance tuning.",
+    description: "Proven hands-on skills in Azure, MySQL, and Access databases; from query optimisation to VBA automation and performance tuning.",
     color: "blue",
   },
   {
@@ -133,7 +133,7 @@ export function About() {
               { label: "Status", value: "Open to DevOps & Cloud roles", highlight: true },
               { label: "Languages", value: "English, Afrikaans" },
               { label: "Focus Areas", value: "Azure · DevOps · Data Science · Cloud" },
-              { label: "Experience", value: "1+ year enterprise environment" },
+              { label: "Experience", value: "2+ years enterprise environment" },
             ].map(({ label, value, highlight }) => (
               <div key={label} className="glass border border-white/6 rounded-xl p-4">
                 <div className="text-xs font-mono text-text-muted uppercase tracking-widest mb-1">{label}</div>

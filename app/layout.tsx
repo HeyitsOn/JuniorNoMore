@@ -51,7 +51,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
-      <body className="bg-background text-text-primary antialiased">{children}</body>
+      <body className="bg-background text-text-primary antialiased" suppressHydrationWarning>{children}</body>
     </html>
   );
 }

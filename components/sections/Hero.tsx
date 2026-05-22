@@ -219,7 +219,7 @@ export function Hero() {
             {/* Stats row */}
             <div className="grid grid-cols-3 gap-3">
               {[
-                { value: "1+", label: "Years Experience" },
+                { value: "2+", label: "Years Experience" },
                 { value: "5+", label: "Live Projects" },
                 { value: "Azure", label: "Cloud Platform" },
               ].map(({ value, label }) => (

@@ -9,9 +9,9 @@ import { SectionWrapper } from "@/components/shared/SectionWrapper";
 const stats = [
   {
     icon: Clock,
-    value: 15,
+    value: 2,
     suffix: "+",
-    label: "Months Enterprise Experience",
+    label: "Years Enterprise Experience",
     sub: "SA Bullion — Azure & DevOps",
     color: "gold",
   },
